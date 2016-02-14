@@ -88,7 +88,7 @@ function getHomeModule() {
         },
         proxy: {
             type: 'ajax',
-            url: 'data/daily-Information.json'
+            url: 'data/daily-information.json'
         }
     });
     

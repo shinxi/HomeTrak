@@ -28,7 +28,6 @@ Ext.application
         xtype: 'client'
       ,
         xtype: 'home'
-        getCaregiverModule()
       ]
       renderTo: Ext.getBody())
     return

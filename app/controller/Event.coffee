@@ -22,4 +22,9 @@ Ext.define 'HomeTrak.controller.Event',
     onViewReady: (grid) ->
         grid.view.focusRow 0
         @onItemClick '', grid.view.getRecord 0
+        Ext.create 'Ext.tip.ToolTip',
+            target: grid.view.el
+            delegate: grid.view.itemSelector
+            html: 'double click for more detail'
+
         return

@@ -9,3 +9,8 @@ body {
     padding: 5px 10px;
     margin: 0;
 }
+
+.search-item:hover {
+    background-color: #D4FFD4;
+    cursor: pointer;
+};

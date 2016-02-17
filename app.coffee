@@ -2,7 +2,7 @@ Ext.Loader.setConfig enabled: true
 Ext.Loader.setPath 'Ext.ux', 'ext/ux'
 
 Ext.application
-  views: [ 'Home', 'Client', 'ClientSearch', 'ClientSchedule' ]
+  views: [ 'Home', 'Client', 'Caregiver', 'ClientSearch', 'ClientSchedule', 'AssessmentChoicePanel']
   controllers: ['Event']
   requires: [
     'Ext.tip.QuickTipManager'
@@ -25,7 +25,7 @@ Ext.application
     viewport = Ext.create('Ext.Viewport',
       layout: 'card'
       items: [
-        xtype: 'client'
+        xtype: 'caregiver'
       ,
         xtype: 'home'
       ]

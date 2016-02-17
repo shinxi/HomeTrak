@@ -6,7 +6,7 @@ Ext.Loader.setConfig({
 Ext.Loader.setPath('Ext.ux', 'ext/ux');
 
 Ext.application({
-  views: ['Home', 'Client', 'ClientSearch', 'ClientSchedule'],
+  views: ['Home', 'Client', 'Caregiver', 'ClientSearch', 'ClientSchedule', 'AssessmentChoicePanel'],
   controllers: ['Event'],
   requires: ['Ext.tip.QuickTipManager', 'Ext.container.Viewport', 'Ext.layout.*', 'Ext.form.Panel', 'Ext.form.Label', 'Ext.grid.*', 'Ext.data.*', 'Ext.tree.*', 'Ext.selection.*', 'Ext.tab.Panel', 'Ext.ux.form.SearchField', 'Ext.ux.DataTip', 'Ext.ux.layout.Center'],
   name: 'HomeTrak',
@@ -17,7 +17,7 @@ Ext.application({
       layout: 'card',
       items: [
         {
-          xtype: 'client'
+          xtype: 'caregiver'
         }, {
           xtype: 'home'
         }

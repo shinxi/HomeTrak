@@ -1,0 +1,88 @@
+[
+  {
+    "text": "CHOICE ASSESSMENT",
+    "expanded": true,
+    "children": [
+      {
+        "text": "REFERRAL/HEALTH HISTORY",
+        "leaf": true,
+        "checked": true
+      },
+      {
+        "text": "VITAL SIGNS",
+        "leaf": true,
+        "checked": true
+      },
+      {
+        "text": "OTHER MEASUREMENTS",
+        "leaf": true,
+        "checked": true
+      },
+      {
+        "text": "ENVIRONMENTAL/SAFETY",
+        "leaf": true,
+        "checked": true
+      },
+      {
+        "text": "CARE MANAGEMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "SUPPORTIVE ASSISTANCE",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "INTEGUMENTARY ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "EYES/EARS/NOSE/THROAT ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "ORAL/NURITIONAL/METABOLIC ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "CARDIOPULMONARY ASSESSMENT",
+        "leaf": true,
+        "checked": true
+      },
+      {
+        "text": "GASTROINTESTINAL ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "GENITOURINARY ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "ACTIVITY/MUSCULOSKELETAL",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "NEUROLOGICAL/SENSORY ASSESSMENT",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "COGNITIVE/PSYCHOSOCIAL",
+        "leaf": false,
+        "checked": true
+      },
+      {
+        "text": "PAIN ASSESSMENT",
+        "leaf": true,
+        "checked": true
+      }
+    ]
+  }
+]

@@ -14,3 +14,7 @@ body {
     background-color: #D4FFD4;
     cursor: pointer;
 };
+
+.x-tree-icon {
+    width: 30px;
+}

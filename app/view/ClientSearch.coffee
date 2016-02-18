@@ -1,9 +1,9 @@
 Ext.define 'HomeTrak.view.ClientSearch',
   extend: 'Ext.panel.Panel'
   xtype: 'clientSearch'
-  title: 'Clients'
   layout: 'fit'
   initComponent: ->
+    l10n = HomeTrak.util.Localization
     Ext.define 'Post',
       extend: 'Ext.data.Model'
       proxy:
@@ -63,7 +63,7 @@ Ext.define 'HomeTrak.view.ClientSearch',
         xtype: 'toolbar'
         items:
           width: 200
-          fieldLabel: 'Name'
+          fieldLabel: l10n.get 'clientSearch.client_search_name'
           labelWidth: 50
           value: 's'
           emptyText: "Pls input user name"

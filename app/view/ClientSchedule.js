@@ -7,14 +7,15 @@ Ext.define('HomeTrak.view.ClientSchedule', {
     align: 'stretch'
   },
   initComponent: function() {
-    var summaryInfo;
+    var l10n, summaryInfo;
+    l10n = HomeTrak.util.Localization;
     this.dockedItems = [
       {
         dock: 'top',
         xtype: 'toolbar',
         items: [
           {
-            text: 'Today',
+            text: l10n.get('schedule.today'),
             pressed: true,
             enableToggle: true,
             handler: function() {
@@ -27,7 +28,7 @@ Ext.define('HomeTrak.view.ClientSchedule', {
               myClients.toggle();
             }
           }, '-', {
-            text: 'My clients',
+            text: l10n.get('schedule.my_clients'),
             enableToggle: true,
             handler: function() {
               var td;
@@ -121,7 +122,7 @@ Ext.define('HomeTrak.view.ClientSchedule', {
       items: [
         {
           xtype: 'panel',
-          title: 'Client',
+          title: l10n.get('client.name'),
           layout: 'column',
           defaults: {
             labelWidth: 70,
@@ -130,25 +131,25 @@ Ext.define('HomeTrak.view.ClientSchedule', {
           items: [
             {
               columnWidth: 0.45,
-              fieldLabel: 'Client ID',
+              fieldLabel: l10n.get('client.id'),
               id: 'client-id',
               xtype: 'displayfield',
               value: '509006'
             }, {
               columnWidth: 0.5,
-              fieldLabel: 'Phone',
+              fieldLabel: l10n.get('client.phone'),
               id: 'client-phone',
               xtype: 'displayfield',
               value: '1854643144'
             }, {
               columnWidth: 0.45,
-              fieldLabel: 'First Name',
+              fieldLabel: l10n.get('client.first_name'),
               id: 'client-first-name',
               xtype: 'displayfield',
               value: 'John'
             }, {
               columnWidth: 0.5,
-              fieldLabel: 'Last Name',
+              fieldLabel: l10n.get('client.last_name'),
               id: 'client-last-name',
               xtype: 'displayfield',
               value: 'Eriggs'
@@ -156,7 +157,7 @@ Ext.define('HomeTrak.view.ClientSchedule', {
           ]
         }, {
           xtype: 'panel',
-          title: 'Dr.',
+          title: l10n.get('schedule.doctor'),
           layout: 'column',
           defaults: {
             labelWidth: 70,
@@ -165,37 +166,37 @@ Ext.define('HomeTrak.view.ClientSchedule', {
           items: [
             {
               columnWidth: 0.8,
-              fieldLabel: 'Dr. Name',
+              fieldLabel: l10n.get('schedule.doctor_name'),
               xtype: 'displayfield',
               value: 'Dr. Barnard'
             }, {
               columnWidth: 0.8,
-              fieldLabel: 'Dr. ID',
+              fieldLabel: l10n.get('schedule.doctor_id'),
               xtype: 'displayfield',
               value: '2224'
             }, {
               columnWidth: 0.8,
-              fieldLabel: 'Phone',
+              fieldLabel: l10n.get('schedule.doctor_phone'),
               xtype: 'displayfield',
               value: '11122222211'
             }
           ]
         }, {
           xtype: 'gridpanel',
-          title: 'History',
+          title: l10n.get('client.history'),
           flex: 1,
           store: Ext.data.StoreManager.lookup('historyStore'),
           columns: [
             {
-              text: 'Date',
+              text: l10n.get('client.history_date'),
               dataIndex: 'date',
               width: 75
             }, {
-              text: 'Time',
+              text: l10n.get('client.history_time'),
               dataIndex: 'time',
               width: 75
             }, {
-              text: 'Status',
+              text: l10n.get('client.history_status'),
               dataIndex: 'status',
               flex: 1
             }
@@ -205,21 +206,21 @@ Ext.define('HomeTrak.view.ClientSchedule', {
     });
     this.items = [
       {
-        xtype: 'gridpanel',
         title: 'Reservations',
+        xtype: 'gridpanel',
         height: 250,
         store: Ext.data.StoreManager.lookup('reservationStore'),
         columns: [
           {
-            text: 'Name',
+            text: l10n.get('schedule.reservation_name'),
             dataIndex: 'name',
             width: 100
           }, {
-            text: 'Phone',
+            text: l10n.get('schedule.reservation_phone'),
             dataIndex: 'phone',
             width: 100
           }, {
-            text: 'Time',
+            text: l10n.get('schedule.reservation_time'),
             dataIndex: 'time',
             flex: 1
           }

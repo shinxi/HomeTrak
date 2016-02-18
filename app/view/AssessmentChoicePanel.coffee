@@ -5,6 +5,7 @@ Ext.define 'HomeTrak.view.AssessmentChoicePanel',
   useArrows: true
   height: 300
   initComponent: ->
+    l10n = HomeTrak.util.Localization
     @store = Ext.create('Ext.data.TreeStore', 
       proxy:
         type: 'ajax'
@@ -15,27 +16,27 @@ Ext.define 'HomeTrak.view.AssessmentChoicePanel',
       '-'
     ,
       xtype: 'button'
-      text: 'Save'
+      text: l10n.get "client.save"
     ,
       '-'
     ,
       xtype: 'button'
-      text: 'Cancel/Exit'
+      text: l10n.get "client.canel_exit"
     ,
       '-'
     ,
       xtype: 'button'
-      text: 'Previous'
+      text: l10n.get "client.previous"
     ,
       '-'
     ,
       xtype: 'button'
-      text: 'Next'
+      text: l10n.get "client.next"
     ,
       '-'
     ,
       xtype: 'button'
-      text: 'Save Exit'
+      text: l10n.get "client.save_exit"
     ]
     @callParent arguments
     return

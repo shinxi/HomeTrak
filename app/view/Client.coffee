@@ -2,16 +2,17 @@ Ext.define 'HomeTrak.view.Client',
   extend: 'Ext.tab.Panel'
   xtype: 'client'
   autoScroll: true
-  bbar: [
-    { xtype: 'button', text: 'Submit' }
-    '-'
-    { xtype: 'button', text: 'Analysis' }
-    '-'
-  ]
   layout:
     xtype: 'vbox'
     align: 'stretch'
   initComponent: ->
+    l10n = HomeTrak.util.Localization
+    @bbar = [
+      { xtype: 'button', text: l10n.get 'client.submit' }
+      '-'
+      { xtype: 'button', text: l10n.get 'client.analysis' }
+      '-'
+    ]
     symptom = Ext.create('Ext.data.Store',
       fields: [
         'code'
@@ -41,7 +42,7 @@ Ext.define 'HomeTrak.view.Client',
           xtype: 'form'
           layout: 'column'
           collapsible: true
-          title: 'Basic Information'
+          title: l10n.get 'client.basic_info'
           defaults:
             columnWidth: 1 / 9
             margin: '2px 1px 2px 1px'
@@ -50,12 +51,12 @@ Ext.define 'HomeTrak.view.Client',
           items: [
             {
               columnWidth: 3 / 9
-              fieldLabel: 'Client ID'
+              fieldLabel: l10n.get 'client.id'
               xtype: 'textfield'
             }
             {
               columnWidth: 1 / 9
-              fieldLabel: 'Status'
+              fieldLabel: l10n.get 'client.status'
               xtype: 'textfield'
             }
             {
@@ -65,22 +66,22 @@ Ext.define 'HomeTrak.view.Client',
             }
             {
               columnWidth: 4 / 9
-              fieldLabel: 'First Name'
+              fieldLabel: l10n.get 'client.first_name'
               xtype: 'textfield'
             }
             {
               columnWidth: 2 / 9
-              fieldLabel: 'Phone'
+              fieldLabel: l10n.get 'client.phone'
               xtype: 'textfield'
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'District'
+              fieldLabel: l10n.get 'client.district'
               xtype: 'textfield'
             }
             {
               columnWidth: 4 / 9
-              fieldLabel: 'Last Name'
+              fieldLabel: l10n.get 'client.last_name'
               xtype: 'textfield'
             }
             {
@@ -89,42 +90,42 @@ Ext.define 'HomeTrak.view.Client',
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'Language'
+              fieldLabel: l10n.get 'client.language'
               xtype: 'textfield'
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'Address'
+              fieldLabel: l10n.get 'client.address'
               xtype: 'textfield'
             }
             {
               columnWidth: 1 / 9
-              fieldLabel: 'APT'
+              fieldLabel: l10n.get 'client.apt'
               xtype: 'textfield'
             }
             {
               columnWidth: 2 / 9
-              fieldLabel: 'S.S.N'
+              fieldLabel: l10n.get 'client.ssn'
               xtype: 'textfield'
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'Gender'
+              fieldLabel: l10n.get 'client.gender'
               xtype: 'textfield'
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'Address2'
+              fieldLabel: l10n.get 'client.address2'
               xtype: 'textfield'
             }
             {
               columnWidth: 1 / 9
-              fieldLabel: 'State'
+              fieldLabel: l10n.get 'client.state'
               xtype: 'textfield'
             }
             {
               columnWidth: 2 / 9
-              fieldLabel: 'Birthday'
+              fieldLabel: l10n.get 'client.birthday'
               xtype: 'textfield'
             }
             {
@@ -133,17 +134,17 @@ Ext.define 'HomeTrak.view.Client',
             }
             {
               columnWidth: 3 / 9
-              fieldLabel: 'City'
+              fieldLabel: l10n.get 'client.city'
               xtype: 'textfield'
             }
             {
               columnWidth: 1 / 9
-              fieldLabel: 'Zip'
+              fieldLabel: l10n.get 'client.zip'
               xtype: 'textfield'
             }
             {
               columnWidth: 2 / 9
-              fieldLabel: 'Email'
+              fieldLabel: l10n.get 'client.email'
               xtype: 'textfield'
             }
             {
@@ -155,7 +156,7 @@ Ext.define 'HomeTrak.view.Client',
         {
           xtype: 'form'
           collapsible: true
-          title: 'General Information'
+          title: l10n.get 'client.general_info'
           layout: 'column'
           defaults:
             margin: '5px 5px 5px 5px'
@@ -165,7 +166,7 @@ Ext.define 'HomeTrak.view.Client',
             {
               xtype: 'fieldset'
               columnWidth: 0.55
-              title: 'Diagnosis Codes'
+              title: l10n.get 'client.diagnosis_code'
               collapsible: true
               defaultType: 'textfield'
               defaults: anchor: '100%'
@@ -173,7 +174,7 @@ Ext.define 'HomeTrak.view.Client',
               items: [
                 {
                   xtype: 'combobox'
-                  fieldLabel: 'Symptom'
+                  fieldLabel: l10n.get 'client.sympton'
                   store: symptom
                   queryMode: 'local'
                   displayField: 'name'
@@ -182,7 +183,7 @@ Ext.define 'HomeTrak.view.Client',
                 }
                 {
                   xtype: 'combobox'
-                  fieldLabel: 'Symptom2'
+                  fieldLabel: l10n.get 'client.sympton2'
                   store: symptom
                   queryMode: 'local'
                   displayField: 'name'
@@ -191,7 +192,7 @@ Ext.define 'HomeTrak.view.Client',
                 }
                 {
                   xtype: 'combobox'
-                  fieldLabel: 'Symptom3'
+                  fieldLabel: l10n.get 'client.sympton3'
                   store: symptom
                   queryMode: 'local'
                   displayField: 'name'
@@ -203,22 +204,22 @@ Ext.define 'HomeTrak.view.Client',
             {
               xtype: 'fieldset'
               columnWidth: 0.55
-              title: 'Health Index'
+              title: l10n.get 'client.health_index'
               collapsible: true
               defaultType: 'textfield'
               defaults: anchor: '100%'
               layout: 'anchor'
               items: [
                 {
-                  fieldLabel: 'Heart Beats'
+                  fieldLabel: l10n.get 'client.heat_beats'
                   name: 'field1'
                 }
                 {
-                  fieldLabel: 'Pressure'
+                  fieldLabel: l10n.get 'client.pressure'
                   name: 'field2'
                 }
                 {
-                  fieldLabel: 'Others'
+                  fieldLabel: l10n.get 'client.others'
                   name: 'field2'
                 }
               ]
@@ -228,11 +229,11 @@ Ext.define 'HomeTrak.view.Client',
     ]
     @items = [
         {
-            title: 'Profile'
+            title: l10n.get 'client.profile'
             items: pItems
         }
         {
-            title: 'COC Notes'
+            title: l10n.get 'client.coc_notes'
             layout: 'fit'
             items:
                 {
@@ -245,7 +246,7 @@ Ext.define 'HomeTrak.view.Client',
                 }
         }
         {
-            title: 'Goals'
+            title: l10n.get 'client.goals'
             layout: 'fit'
             items:
                 {
@@ -258,53 +259,53 @@ Ext.define 'HomeTrak.view.Client',
                 }
         }
         {
-            title: 'HEALTH MAINTENANCE'
+            title: l10n.get 'client.health_maintenance'
             items:
                 {
                   xtype: 'fieldset'
                   columnWidth: 0.55
-                  title: 'Health Index'
+                  title: l10n.get 'client.health_index'
                   collapsible: true
                   defaultType: 'textfield'
                   defaults: anchor: '100%'
                   layout: 'anchor'
                   items: [
                     {
-                      fieldLabel: 'Heart Beats'
+                      fieldLabel: l10n.get 'client.heat_beats'
                       name: 'field1'
                     }
                     {
-                      fieldLabel: 'Pressure'
+                      fieldLabel: l10n.get 'client.pressure'
                       name: 'field2'
                     }
                     {
-                      fieldLabel: 'Others'
+                      fieldLabel: l10n.get 'client.others'
                       name: 'field2'
                     }
                   ]
                 }
         }
         {
-            title: 'Visits'
+            title: l10n.get 'client.visits'
             items: 
                 {
                   xtype: 'gridpanel'
-                  title: 'History'
+                  title: l10n.get 'client.history'
                   flex: 1
                   store: Ext.data.StoreManager.lookup('historyStore')
                   columns: [
                     {
-                      text: 'Date'
+                      text: l10n.get 'client.history_date'
                       dataIndex: 'date'
                       width: 75
                     }
                     {
-                      text: 'Time'
+                      text: l10n.get 'client.history_time'
                       dataIndex: 'time'
                       width: 75
                     }
                     {
-                      text: 'Status'
+                      text: l10n.get 'client.history_status'
                       dataIndex: 'status'
                       flex: 1
                     }
@@ -312,10 +313,10 @@ Ext.define 'HomeTrak.view.Client',
                 }
         }
         {
-            title: 'Oasis'
+            title: l10n.get 'client.oasis'
             xtype: 'tabpanel'
             items: 
-                title: 'SOC Assessment'
+                title: l10n.get 'client.soc_assess'
                 padding: '0 5 0 5'
                 style: 
                     backgroundColor: '#dfe8f6'
@@ -335,7 +336,7 @@ Ext.define 'HomeTrak.view.Client',
                                 xtype: 'tabpanel'
                                 items: [
                                     {
-                                        title: 'Reqd'
+                                        title: l10n.get 'client.reqd'
                                         xtype: 'form'
                                         layout: 'fit'
                                         items: 
@@ -345,7 +346,7 @@ Ext.define 'HomeTrak.view.Client',
                                             xtype: 'textarea'
                                     }
                                     {
-                                        title: 'No Visit'
+                                        title: l10n.get 'client.no_visit'
                                         xtype: 'form'
                                         layout: 'fit'
                                         items: 
@@ -353,7 +354,7 @@ Ext.define 'HomeTrak.view.Client',
                                             xtype: 'textarea'
                                     }
                                     {
-                                        title: 'No Visit'
+                                        title: l10n.get 'client.no_visit'
                                         xtype: 'form'
                                         layout: 'fit'
                                         items: 
@@ -369,7 +370,7 @@ Ext.define 'HomeTrak.view.Client',
                         flex: 1
                         items: [
                             {
-                                title: 'Allergies'
+                                title: l10n.get 'client.allergies'
                                 layout: 
                                     type: 'vbox'
                                     align: 'stretch'
@@ -382,7 +383,7 @@ Ext.define 'HomeTrak.view.Client',
                                                 xtype: 'textfield'
                                                 padding: '2px 0 0 0'
                                                 labelWidth: 150
-                                                fieldLabel: '(VNS0004) Allergies'
+                                                fieldLabel: l10n.get 'client.vns_allergies'
                                             }
                                         ]
                                     }
@@ -391,7 +392,7 @@ Ext.define 'HomeTrak.view.Client',
                                         flex: 1
                                         items: [
                                             {
-                                                title: 'Drug'
+                                                title: l10n.get 'client.drug'
                                                 layout: 
                                                     type: 'hbox'
                                                     align: 'stretch'
@@ -399,7 +400,7 @@ Ext.define 'HomeTrak.view.Client',
                                                     {
                                                         flex: 1
                                                         xtype: 'checkboxgroup'
-                                                        fieldLabel: 'Allergic Reactions'
+                                                        fieldLabel: l10n.get 'client.allergic_reaction'
                                                         labelAlign: 'top'
                                                         columns: 1
                                                         border: 1
@@ -408,27 +409,27 @@ Ext.define 'HomeTrak.view.Client',
                                                         vertical: true
                                                         items: [
                                                             {
-                                                              boxLabel: 'Penicillin'
+                                                              boxLabel: l10n.get 'client.penicillin'
                                                               name: 'rb'
                                                               inputValue: '1'
                                                             }
                                                             {
-                                                              boxLabel: 'Sulfa'
+                                                              boxLabel: l10n.get 'client.sulfa'
                                                               name: 'rb'
                                                               inputValue: '2'
                                                             }
                                                             {
-                                                              boxLabel: 'Aspirin'
+                                                              boxLabel: l10n.get 'client.aspirin'
                                                               name: 'rb'
                                                               inputValue: '3'
                                                             }
                                                             {
-                                                              boxLabel: 'Codeine'
+                                                              boxLabel: l10n.get 'client.codeine'
                                                               name: 'rb'
                                                               inputValue: '4'
                                                             }
                                                             {
-                                                              boxLabel: 'Other'
+                                                              boxLabel: l10n.get 'client.other'
                                                               name: 'rb'
                                                               inputValue: '5'
                                                             }
@@ -448,42 +449,42 @@ Ext.define 'HomeTrak.view.Client',
                                                         vertical: true
                                                         items: [
                                                             {
-                                                              boxLabel: 'Anaphylaxis'
+                                                              boxLabel: l10n.get 'client.anaphylaxis'
                                                               name: 'rb1'
                                                               inputValue: '1'
                                                             }
                                                             {
-                                                              boxLabel: 'Diarrhea'
+                                                              boxLabel: l10n.get 'client.diarrhea'
                                                               name: 'rb1'
                                                               inputValue: '2'
                                                             }
                                                             {
-                                                              boxLabel: 'Nausea/Vomiting'
+                                                              boxLabel: l10n.get 'client.nausea_Vomiting'
                                                               name: 'rb1'
                                                               inputValue: '3'
                                                             }
                                                             {
-                                                              boxLabel: 'Rash'
+                                                              boxLabel: l10n.get 'client.rash'
                                                               name: 'rb1'
                                                               inputValue: '4'
                                                             }
                                                             {
-                                                              boxLabel: 'Upper respiratory symptoms'
+                                                              boxLabel: l10n.get 'client.upper_respiratory_symptoms'
                                                               name: 'rb1'
                                                               inputValue: '5'
                                                             }
                                                             {
-                                                              boxLabel: 'Asthma attack'
+                                                              boxLabel: l10n.get 'client.asthma_attack'
                                                               name: 'rb1'
                                                               inputValue: '5'
                                                             }
                                                             {
-                                                              boxLabel: 'Unknown'
+                                                              boxLabel: l10n.get 'client.unknown'
                                                               name: 'rb1'
                                                               inputValue: '5'
                                                             }
                                                             {
-                                                              boxLabel: 'Other'
+                                                              boxLabel: l10n.get 'client.other'
                                                               name: 'rb1'
                                                               inputValue: '5'
                                                             }
@@ -492,26 +493,26 @@ Ext.define 'HomeTrak.view.Client',
                                                 ]
                                             }
                                             {
-                                                title: 'Food'
+                                                title: l10n.get 'client.food'
                                             }
                                             {
-                                                title: 'Enviornmental'
+                                                title: l10n.get 'client.enviornmental'
                                             }
                                         ]
                                     }
                                 ]
                             }
                             {
-                                title: 'Substance Abuse 1'
+                                title: l10n.get 'client.substance_abuse1'
                             }
                             {
-                                title: 'Substance Abuse 2'
+                                title: l10n.get 'client.substance_abuse2'
                             }
                             {
-                                title: 'Substance Abuse 3'
+                                title: l10n.get 'client.substance_abuse3'
                             }
                             {
-                                title: 'Substance Abuse 4'
+                                title: l10n.get 'client.substance_abuse4'
                             }
                         ]
                     }

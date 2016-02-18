@@ -4,7 +4,7 @@ Ext.define('HomeTrak.view.Caregiver', {
   xtype: 'caregiver',
   layout: 'fit',
   initComponent: function() {
-    var searchTree, searchTreeStore;
+    var l10n, searchTree, searchTreeStore;
     searchTreeStore = Ext.create('Ext.data.TreeStore', {
       root: {
         expanded: true,
@@ -81,10 +81,11 @@ Ext.define('HomeTrak.view.Caregiver', {
       rowLines: true,
       rootVisible: false
     };
+    l10n = HomeTrak.util.Localization;
     this.items = [
       {
         xtype: 'panel',
-        title: 'Caregiver Name: John',
+        title: (l10n.get('caregiver_name')) + ': John',
         layout: {
           type: 'hbox',
           align: 'stretch'
@@ -95,7 +96,7 @@ Ext.define('HomeTrak.view.Caregiver', {
             width: 500,
             items: [
               {
-                title: 'Client Search',
+                title: l10n.get('clientSearch.client_search'),
                 region: 'west',
                 xtype: "clientSearch",
                 margins: '2 0 0 2',

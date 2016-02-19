@@ -24,12 +24,14 @@ Ext.define('HomeTrak.controller.Event', {
     lastName.setValue(name.split(" ")[1]);
   },
   onViewReady: function(grid) {
+    var l10n;
+    l10n = HomeTrak.util.Localization;
     grid.view.focusRow(0);
     this.onItemClick('', grid.view.getRecord(0));
     Ext.create('Ext.tip.ToolTip', {
       target: grid.view.el,
       delegate: grid.view.itemSelector,
-      html: 'double click for more detail'
+      html: l10n.get('schedule.dbc_for_more_detail')
     });
   }
 });

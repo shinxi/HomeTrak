@@ -212,6 +212,13 @@ Ext.define 'HomeTrak.view.ClientSchedule',
       xtype: 'gridpanel'
       height: 250
       store: Ext.data.StoreManager.lookup('reservationStore')
+      listeners: 
+        afterrender: (me) ->
+          task = new Ext.util.DelayedTask ->
+              me.setTitle l10n.get "schedule.reservations"
+              return
+          task.delay 1000
+          return
       columns: [
         {
           text: l10n.get 'schedule.reservation_name'

@@ -1,85 +1,85 @@
 [
   {
-    "text": "测量选项",
+    "text": "CHOICE ASSESSMENT",
     "expanded": true,
     "children": [
       {
-        "text": "转诊/健康史",
+        "text": "REFERRAL/HEALTH HISTORY",
         "leaf": true,
         "checked": true
       },
       {
-        "text": "生命特征",
+        "text": "VITAL SIGNS",
         "leaf": true,
         "checked": true
       },
       {
-        "text": "其他测量",
+        "text": "OTHER MEASUREMENTS",
         "leaf": true,
         "checked": true
       },
       {
-        "text": "环境/安全",
+        "text": "ENVIRONMENTAL/SAFETY",
         "leaf": true,
         "checked": true
       },
       {
-        "text": "护理管理",
+        "text": "CARE MANAGEMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "支持援助",
+        "text": "SUPPORTIVE ASSISTANCE",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "被评估",
+        "text": "INTEGUMENTARY ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "眼睛/耳朵/鼻子/喉咙的评价",
+        "text": "EYES/EARS/NOSE/THROAT ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "口腔/营养/代谢评估",
+        "text": "ORAL/NURITIONAL/METABOLIC ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "心肺功能评价",
+        "text": "CARDIOPULMONARY ASSESSMENT",
         "leaf": true,
         "checked": true
       },
       {
-        "text": "肠胃道评估",
+        "text": "GASTROINTESTINAL ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "泌尿生殖系统评估",
+        "text": "GENITOURINARY ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "活动/肌肉",
+        "text": "ACTIVITY/MUSCULOSKELETAL",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "神经/感觉评估",
+        "text": "NEUROLOGICAL/SENSORY ASSESSMENT",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "认知/心理评估",
+        "text": "COGNITIVE/PSYCHOSOCIAL",
         "leaf": false,
         "checked": true
       },
       {
-        "text": "疼痛评估",
+        "text": "PAIN ASSESSMENT",
         "leaf": true,
         "checked": true
       }

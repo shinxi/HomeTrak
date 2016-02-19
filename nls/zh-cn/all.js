@@ -15,7 +15,8 @@ define({
     "doctor": "医生",
     "doctor_name": "医生姓名",
     "doctor_id": "医生ID",
-    "doctor_phone": "医生电话"
+    "doctor_phone": "医生电话",
+    "dbc_for_more_detail": "双击显示详情"
   },
   "client": {
     "submit": "提交",

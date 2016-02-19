@@ -16,6 +16,7 @@ define({
             "doctor_name": "Dr. Name"
             "doctor_id": "Dr. ID"
             "doctor_phone": "Phone"
+            "dbc_for_more_detail": "double click for more detail"
         }
         "client": {
             "submit": "Submit"

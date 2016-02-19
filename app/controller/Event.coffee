@@ -20,11 +20,12 @@ Ext.define 'HomeTrak.controller.Event',
         lastName.setValue name.split(" ")[1]
         return
     onViewReady: (grid) ->
+        l10n = HomeTrak.util.Localization
         grid.view.focusRow 0
         @onItemClick '', grid.view.getRecord 0
         Ext.create 'Ext.tip.ToolTip',
             target: grid.view.el
             delegate: grid.view.itemSelector
-            html: 'double click for more detail'
+            html: l10n.get 'schedule.dbc_for_more_detail'
 
         return

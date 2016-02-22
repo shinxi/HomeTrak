@@ -2,7 +2,7 @@ Ext.define 'HomeTrak.controller.Event',
     extend: 'Ext.app.Controller'
     init: ->
         @control 
-            'gridpanel[title=Reservations]': 
+            'gridpanel[gridtype=reservation]': 
                 itemclick: @onItemClick
                 viewready: @onViewReady
         return
@@ -16,8 +16,8 @@ Ext.define 'HomeTrak.controller.Event',
         clientId.setValue record.get 'id'
         phone.setValue record.get 'phone'
         name = record.get 'name'
-        firstName.setValue name.split(" ")[0]
-        lastName.setValue name.split(" ")[1]
+        firstName.setValue name.substring 0, 1
+        lastName.setValue name.substring 1
         return
     onViewReady: (grid) ->
         l10n = HomeTrak.util.Localization

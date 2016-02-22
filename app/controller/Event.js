@@ -3,7 +3,7 @@ Ext.define('HomeTrak.controller.Event', {
   extend: 'Ext.app.Controller',
   init: function() {
     this.control({
-      'gridpanel[title=Reservations]': {
+      'gridpanel[gridtype=reservation]': {
         itemclick: this.onItemClick,
         viewready: this.onViewReady
       }
@@ -20,8 +20,8 @@ Ext.define('HomeTrak.controller.Event', {
     clientId.setValue(record.get('id'));
     phone.setValue(record.get('phone'));
     name = record.get('name');
-    firstName.setValue(name.split(" ")[0]);
-    lastName.setValue(name.split(" ")[1]);
+    firstName.setValue(name.substring(0, 1));
+    lastName.setValue(name.substring(1));
   },
   onViewReady: function(grid) {
     var l10n;

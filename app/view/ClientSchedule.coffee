@@ -35,44 +35,20 @@ Ext.define 'HomeTrak.view.ClientSchedule',
       ]
     ]
 
-    Ext.create 'Ext.data.Store',
+    rs = Ext.create 'Ext.data.Store',
       storeId: 'reservationStore'
       fields: [
         'name'
         'phone'
         'time'
       ]
-      data: 'items': [
-        {
-          'name': 'John Eriggs'
-          'phone': '1854643144'
-          'time': '10:00'
-          'id': '509006'
-        }
-        {
-          'name': 'Angela Hriggs'
-          'phone': '1504643144'
-          'time': '13:00'
-          'id': '839006'
-        }
-        {
-          'name': 'Mike Jriggs'
-          'phone': '1524643144'
-          'time': '15:00'
-          'id': '509006'
-        }
-        {
-          'name': 'Lida Eriggs'
-          'phone': '1404643144'
-          'time': '16:00'
-          'id': '949006'
-        }
-      ]
+      autoLoad: true
       proxy:
-        type: 'memory'
+        type: 'ajax'
+        url: 'data/reservations.json'
         reader:
           type: 'json'
-          root: 'items'
+    rs.loadPage(0)
 
     Ext.create 'Ext.data.Store',
       storeId: 'historyStore'
@@ -81,33 +57,12 @@ Ext.define 'HomeTrak.view.ClientSchedule',
         'status'
         'time'
       ]
-      data: 'items': [
-        {
-          'status': 'Edit'
-          'date': '1/1/2016'
-          'time': '10:00'
-        }
-        {
-          'status': 'DELETED'
-          'date': '1/2/2016'
-          'time': '13:00'
-        }
-        {
-          'status': 'UNDELETED'
-          'date': '2/2/2016'
-          'time': '15:00'
-        }
-        {
-          'status': 'Edit'
-          'date': '1/5/2016'
-          'time': '16:00'
-        }
-      ]
+      autoLoad: true
       proxy:
-        type: 'memory'
+        type: 'ajax'
+        url: 'data/history.json'
         reader:
           type: 'json'
-          root: 'items'
 
     summaryInfo = Ext.create 'Ext.container.Container', 
       id: 'clientSchedule-summaryInfo'
@@ -141,17 +96,17 @@ Ext.define 'HomeTrak.view.ClientSchedule',
             }
             {
               columnWidth: 0.45
-              fieldLabel: l10n.get 'client.first_name'
+              fieldLabel: l10n.get 'client.last_name'
               id: 'client-first-name'
               xtype: 'displayfield'
-              value: 'John'
+              value: ''
             }
             {
               columnWidth: 0.5
-              fieldLabel: l10n.get 'client.last_name'
+              fieldLabel: l10n.get 'client.first_name'
               id: 'client-last-name'
               xtype: 'displayfield'
-              value: 'Eriggs'
+              value: ''
             }
           ]
         }
@@ -167,7 +122,7 @@ Ext.define 'HomeTrak.view.ClientSchedule',
               columnWidth: 0.8
               fieldLabel: l10n.get 'schedule.doctor_name'
               xtype: 'displayfield'
-              value: 'Dr. Barnard'
+              value: '陈医生'
             }
             {
               columnWidth: 0.8
@@ -208,17 +163,11 @@ Ext.define 'HomeTrak.view.ClientSchedule',
         }
       ]
     @items = [
-      title: 'Reservations'
+      title: l10n.get "schedule.reservations"
       xtype: 'gridpanel'
       height: 250
+      gridtype: 'reservation'
       store: Ext.data.StoreManager.lookup('reservationStore')
-      listeners: 
-        afterrender: (me) ->
-          task = new Ext.util.DelayedTask ->
-              me.setTitle l10n.get "schedule.reservations"
-              return
-          task.delay 1000
-          return
       columns: [
         {
           text: l10n.get 'schedule.reservation_name'

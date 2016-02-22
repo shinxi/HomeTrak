@@ -3,7 +3,8 @@ define({
   "caregiver_name": "护理人",
   "clientSearch": {
     "client_search": "客户查询",
-    "client_search_name": "姓名"
+    "client_search_name": "姓名",
+    "pls_input_user_name": "请输入姓名"
   },
   "schedule": {
     "today": "今天",
@@ -31,8 +32,8 @@ define({
     "name": "客户",
     "id": "客户ID",
     "status": "状态",
-    "first_name": "姓",
-    "last_name": "名",
+    "first_name": "名",
+    "last_name": "姓",
     "phone": "电话",
     "district": "地区",
     "language": "语言",

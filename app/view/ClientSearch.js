@@ -49,9 +49,29 @@ Ext.define('HomeTrak.view.ClientSearch', {
     ds = Ext.create('Ext.data.Store', {
       pageSize: 10,
       autoLoad: true,
-      model: 'Post'
+      model: 'Post',
+      listeners: {
+        load: function(store, records, eOpts) {
+          var newRecords;
+          newRecords = Ext.Array.filter(records, function(record) {
+            var fn, ln, regexp, sv;
+            fn = record.get('first_name');
+            ln = record.get('last_name');
+            sv = Ext.ComponentQuery.query("searchfield")[0].getValue();
+            regexp = new RegExp(sv);
+            if (regexp.test(ln + fn)) {
+              return true;
+            }
+            return false;
+          });
+          if (newRecords.length === 0) {
+            newRecords = records;
+          }
+          store.loadRecords(newRecords);
+        }
+      }
     });
-    resultTpl = Ext.create('Ext.XTemplate', '<tpl for=".">', '<div class="search-item">', '<div style="padding-top:8px;padding-bottom:8px;border-bottom:1px dotted black"><span>{first_name} {last_name},</span> {client_id}</div>', '</div></tpl>');
+    resultTpl = Ext.create('Ext.XTemplate', '<tpl for=".">', '<div class="search-item">', '<div style="padding-top:8px;padding-bottom:8px;border-bottom:1px dotted black"><span>{last_name}{first_name}, </span> {client_id}</div>', '</div></tpl>');
     this.dockedItems = [
       {
         dock: 'top',
@@ -60,8 +80,8 @@ Ext.define('HomeTrak.view.ClientSearch', {
           width: 200,
           fieldLabel: l10n.get('clientSearch.client_search_name'),
           labelWidth: 50,
-          value: 's',
-          emptyText: "Pls input user name",
+          value: '王',
+          emptyText: l10n.get('clientSearch.pls_input_user_name'),
           xtype: 'searchfield',
           store: ds
         }

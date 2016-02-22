@@ -4,6 +4,7 @@ define({
         "clientSearch": {
             "client_search": "Client Search"
             "client_search_name": "Name"
+            "pls_input_user_name": "Pls input user name"
         },
         "schedule": {
             "today": "Today"

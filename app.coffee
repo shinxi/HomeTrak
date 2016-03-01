@@ -33,6 +33,7 @@ Ext.application
   ]
   name: 'HomeTrak'
   launch: ->
+    # nice
     require ["nls/i18nModule"], (i18n) ->
       HomeTrak.util.Localization.init i18n
       Ext.tip.QuickTipManager.init()
@@ -43,7 +44,6 @@ Ext.application
         ,
           xtype: 'home'
         ]
-        renderTo: Ext.getBody()
       )
       return
     return

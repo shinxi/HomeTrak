@@ -35,8 +35,7 @@ Ext.application({
           }, {
             xtype: 'home'
           }
-        ],
-        renderTo: Ext.getBody()
+        ]
       });
     });
   }

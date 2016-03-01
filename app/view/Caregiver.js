@@ -2,48 +2,38 @@
 Ext.define('HomeTrak.view.Caregiver', {
   extend: 'Ext.panel.Panel',
   xtype: 'caregiver',
-  layout: 'fit',
+  layout: {
+    type: 'hbox',
+    align: 'stretch'
+  },
+  title: '张三',
   initComponent: function() {
     var l10n;
     l10n = HomeTrak.util.Localization;
     this.items = [
       {
-        xtype: 'panel',
-        title: (l10n.get('caregiver_name')) + ': 张三',
-        layout: {
-          type: 'hbox',
-          align: 'stretch'
-        },
+        layout: 'border',
+        width: 500,
         items: [
           {
-            layout: 'border',
-            width: 500,
-            items: [
-              {
-                title: l10n.get('clientSearch.client_search'),
-                region: 'west',
-                xtype: "clientSearch",
-                margins: '2 0 0 2',
-                width: 220,
-                collapsible: true
-              }, {
-                region: 'center',
-                xtype: 'clientSchedule',
-                margins: '2 1 0 0'
-              }
-            ]
-          }, {
-            xtype: 'splitter',
-            width: 3,
-            style: {
-              backgroundColor: '#dfe8f6'
-            }
+            title: l10n.get('clientSearch.client_search'),
+            region: 'west',
+            xtype: "clientSearch",
+            margins: '2 0 0 2',
+            width: 220,
+            collapsible: true
           }, {
             region: 'center',
-            flex: 1,
-            xtype: 'client'
+            xtype: 'clientSchedule',
+            margins: '2 1 0 0'
           }
         ]
+      }, {
+        xtype: 'splitter',
+        width: 3
+      }, {
+        flex: 1,
+        xtype: 'client'
       }
     ];
     this.callParent(arguments);

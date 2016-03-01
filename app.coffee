@@ -38,6 +38,7 @@ Ext.application
       HomeTrak.util.Localization.init i18n
       Ext.tip.QuickTipManager.init()
       viewport = Ext.create('Ext.Viewport',
+        # TODO not fit? be able to add future <client> module 
         layout: 'card'
         items: [
           xtype: 'caregiver'

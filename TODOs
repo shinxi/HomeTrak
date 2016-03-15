@@ -1,0 +1,14 @@
+
+TODO:
+ - find out deployment server. could use aliyun.
+ - choose backend tech stacks. 
+   option1: tomcat + java + mysql
+   option2: node + express + mongo
+ - need analysis backend thuoughput. how much data, how much user, peak users
+ - setup infra,
+   requirement management: JIRA?
+   testing. unit testing for java/js, casperjs
+   CI
+
+Done:
+ - karma setup
